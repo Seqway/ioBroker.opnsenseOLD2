@@ -1,0 +1,109 @@
+{
+    "common": {
+        "name": "opnsense",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "uk": "Початкова версія",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "OPNSense",
+        "titleLang": {
+            "en": "OPNSense",
+            "de": "OPNSense",
+            "ru": "ОПНСенс",
+            "pt": "OPNSense",
+            "nl": "OPNSense",
+            "fr": "OPNSense",
+            "it": "OPNSense",
+            "es": "OPNSense",
+            "pl": "OPNSense",
+            "uk": "OPNSense",
+            "zh-cn": "OPNSense"
+        },
+        "desc": {
+            "en": "Firewall, Network",
+            "de": "Firewall, Netzwerk",
+            "ru": "Брандмауэр, Сеть",
+            "pt": "Firewall, Rede",
+            "nl": "Firewall, netwerk",
+            "fr": "Pare-feu, Réseau",
+            "it": "Firewall, Rete",
+            "es": "Cortafuegos, Red",
+            "pl": "Zapora sieciowa, sieć",
+            "uk": "Брандмауер, мережа",
+            "zh-cn": "防火墙、网络"
+        },
+        "authors": ["Seqway <zeckel@gmx.de>"],
+        "keywords": ["firewall", "network"],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "opnsense.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Seqway/ioBroker.opnsense/master/admin/opnsense.png",
+        "readme": "https://github.com/Seqway/ioBroker.opnsense/blob/master/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "mode": "daemon",
+        "type": "network",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=3.3.22"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.13"
+            }
+        ]
+    },
+    "native": {
+        "OPNsenseServerIp": "",
+        "apikey": "Installer",
+        "apisecret": "",
+        "pollcycle": ""
+    },
+    "encryptedNative": ["apikey", "apisecret"],
+    "protectedNative": ["apikey", "apisecret"],
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
