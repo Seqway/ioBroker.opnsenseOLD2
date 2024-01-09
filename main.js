@@ -7,12 +7,11 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
-const { isEmpty, isArray, isObject } = require('./lib/tools').default;
-//const OPNSenseClient = require('./lib/opensense').default;
-const OPNSenseClient = require('./lib/tools').default;
-const config = require('./lib/config').default;
-//const config = require('./lib/tools').default;
-const opnsense = require('./test/apikey.json');
+const { isEmpty, isArray, isObject } = require('./lib/tools');
+const OPNSenseClient = require('./lib/opnsense');
+const config = require('./lib/config');
+//const config = require('./lib/tools');
+const { native } = require('./io-package.json');
 const { adapter } = require('@iobroker/adapter-core');
 const interval = '10';
 
@@ -83,7 +82,7 @@ class Opnsense extends utils.Adapter {
                 });
             });
 
-        //const client = new OPNSenseClient(opnsense.key, opnsense.secret, 'https://192.168.40.174/api');
+        const client = new OPNSenseClient(native.apikey, native.apisecret, 'https://192.168.40.174/api');
 
         config.modules &&
             config.modules.forEach((module) => {
@@ -241,7 +240,6 @@ class Opnsense extends utils.Adapter {
             case 'symbol':
                 return 'mixed';
         }
-        return undefined;
     }
 
     removeIgnored(ignore, transformed) {
