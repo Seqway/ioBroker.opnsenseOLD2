@@ -75,9 +75,9 @@
         ]
     },
     "native": {
-        "OPNsenseServerIp": "",
-        "apikey": "Installer",
-        "apisecret": "",
+        "OPNsenseServerIp": "https://192.168.40.160/api/core/firmware/status",
+        "apikey": "2fq+XafyG5VhMtqlFhaaa/ELd07FbrUKcM1Yiry2DYrx0e+qQjYiFgX+qz/AovmWnCxmVYkPzLswPB2u",
+        "apisecret": "973x1HOvmGYtKu6xkiGQPrjERfxcPKPtY1EXjZet/kilhU1CdvtYWGOtTZBmQkoRNdufGsXTqDj7qPo5",
         "pollcycle": ""
     },
     "encryptedNative": ["apikey", "apisecret"],

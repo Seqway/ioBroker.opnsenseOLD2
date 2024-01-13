@@ -82,7 +82,7 @@ class Opnsense extends utils.Adapter {
                 });
             });
 
-        const client = new OPNSenseClient(native.apikey, native.apisecret, 'https://192.168.40.174/api');
+        const client = new OPNSenseClient(native.apikey, native.apisecret, 'https://192.168.40.160/api');
 
         config.modules &&
             config.modules.forEach((module) => {
